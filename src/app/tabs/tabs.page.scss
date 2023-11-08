@@ -1,1 +1,46 @@
-
+.tabs{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+.tab-bar{
+    position: relative;
+    width: 100%;
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    color: #000;
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    .tabs-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: -moz-fit-content;
+        height: fit-content;
+        width: 100%;
+        padding: .8rem;
+        background: #fff;
+        border-radius: 40px;
+    }
+    .tab-button-1{
+        height: 100%;
+    }
+    .tab-button-2{
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background-color: #ad1a1a;
+    }
+    .tab-button-3{
+        height: 100%;
+    }
+}

@@ -11,6 +11,9 @@ import { Tab2PageModule } from './tab2/tab2.module';
 import { Tab3PageModule } from './tab3/tab3.module';
 import { TabsPageModule } from './tabs/tabs.module';
 import { TabsPage } from './tabs/tabs.page';
+import { environment } from 'src/environments/environment';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { TabsPage } from './tabs/tabs.page';
     Tab2PageModule,
     Tab3PageModule,
     TabsPageModule,
-    RouterModule
+    RouterModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -1,10 +1,32 @@
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <div class="container">
+    <div class="start">
+      <div class="location">
+        <h2>Tu ubicación actual</h2>
+      </div>
+      <div class="location-info">
+        Cancun - QROO
+      </div>
+    </div>
+    <div class="button">
+      <div class="title">
+        <h1>¿Te encuentras en una emergencia?</h1>
+        <p>Presiona el boton y la ayuda aparecerá</p>
+      </div>
+      <button class="alarm-btn">
+        <img src="../../assets/icon/alarm.png" alt="Alarm">
+        <p>SOS</p>
+      </button>
+    </div>
+    <div class="end">
+      <div class="card">
+        <div class="card-title">
+          Tu dirección:
+        </div>
+        <div class="card-info">
+          Ut Cancun, Calle 89
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

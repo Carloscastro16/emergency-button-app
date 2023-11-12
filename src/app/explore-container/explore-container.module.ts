@@ -5,9 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ExploreContainerComponent } from './explore-container.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
-  imports: [ CommonModule, FormsModule, IonicModule],
+  imports: [ 
+    CommonModule, 
+    FormsModule, 
+    IonicModule, 
+    RouterModule,
+    AppRoutingModule
+  ],
   declarations: [ExploreContainerComponent],
   exports: [ExploreContainerComponent]
 })

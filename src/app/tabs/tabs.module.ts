@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 
 import { TabsPage } from './tabs.page';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   declarations: []
 })

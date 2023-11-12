@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   declarations: [Tab3Page]
 })

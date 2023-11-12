@@ -11,11 +11,11 @@ const routes: Routes = [
     component: Tab1Page
   },
   {
-    path: 'ajustes',
+    path: 'alarma',
     component: Tab2Page
   },
   {
-    path: 'alarma',
+    path: 'ajustes',
     component: Tab3Page
   },
   {

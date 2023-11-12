@@ -1,18 +1,18 @@
 <ion-tabs>
   <div class="tab-bar">
     <div class="tabs-menu">
-      <div class="tab-button-1" routerlink="/inicio">
-        <div class="tab-content">
+      <div class="tab-button-1 btn">
+        <div class="tab-content" (click)="goTo('/inicio')">
           <img src="../../assets/icon/home.png" alt="Inicio">
         </div>
       </div>
-      <div class="tab-button-2" routerlink="/alarma">
-        <div class="tab-content-button">
+      <div class="tab-button-2 btn" >
+        <div class="tab-content-button" (click)="goTo('/alarma')">
           <img src="../../assets/icon/alarm.png" alt="Alarma">
         </div>
       </div>
-      <div class="tab-button-3" routerlink="/ajustes">
-        <div class="tab-content">
+      <div class="tab-button-3 btn" >
+        <div class="tab-content" (click)="goTo('/ajustes')">
           <img src="../../assets/icon/people.png" alt="Usuarios">
         </div>
       </div>

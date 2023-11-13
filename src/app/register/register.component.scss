@@ -1,0 +1,23 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    form{
+        margin-bottom: 4rem;
+    }
+    p{
+        font-size: .8rem;
+        opacity: .7;
+        span{
+            opacity: 1;
+            color: var(--primary);
+            cursor: pointer;
+        }
+    }
+}

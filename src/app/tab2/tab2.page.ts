@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -17,11 +18,13 @@ export class Tab2Page implements OnInit{
   public onSubmitForm = false;
   public emergencyForm: FormGroup;
   public direction: string = '';
+  public userData: any;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private geocodingService: GeocodingService,
-    private alarmService: AlarmasService
+    private alarmService: AlarmasService,
+    private authService: AuthService
   ) {
     this.emergencyForm = this.fb.group({
       emergency: [''],
@@ -30,14 +33,27 @@ export class Tab2Page implements OnInit{
     })
 
   }
-  ngOnInit() {
+  async ngOnInit() {
     this.obtenerUbicacion();
+    this.userData = await this.onGetUser();
+    this.userData = {
+      name: this.userData.displayName,
+      uid: this.userData.uid,
+      email: this.userData.email
+    }
   }
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
   }
+  async onGetUser(){
+    let response = await this.authService.isAuthenticated();
+    let data = response.user;
+    let userData = data;
+    return userData;
+  }
   onSubmit(){
     let formValue = {
+      ...this.userData,
       ...this.emergencyForm.value,
       direction: this.direction
     }

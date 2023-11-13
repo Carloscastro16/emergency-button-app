@@ -99,4 +99,7 @@ export class RegisterComponent  implements OnInit {
       return null;
     };
   }
+  goTo(route: string){
+    this.router.navigateByUrl(route);
+  }
 }

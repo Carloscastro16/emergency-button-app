@@ -30,7 +30,7 @@ export class AuthService {
     if (user) {
       // console.log("logged in");
       
-      return { res: true, user: user.uid };
+      return { res: true, user: user };
     } else {
       return { res: false };
     }

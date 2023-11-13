@@ -17,7 +17,7 @@ export class SignInGuardService {
     return new Observable<boolean>((obs) => {
       this.auth.authState.subscribe((auth) => {
         if (auth) {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/inicio']);
           obs.next(false);
         }
         obs.next(true);

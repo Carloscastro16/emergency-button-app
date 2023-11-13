@@ -20,4 +20,12 @@ export class ContactosService {
       throw error;
     }
   }
+  async getContacts(){
+    try {
+      let data = await this.http.get<any>(this.URL_API + '/contact/get-all').toPromise();
+      return data?.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { enterAnimation } from 'src/assets/styles/animations';
 import Swal from 'sweetalert2';
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   public errorMessage = 'Mensaje de error';
   constructor(
     private authService: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
   ) { 
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,6}$")]],
@@ -66,5 +68,8 @@ export class LoginComponent implements OnInit {
     }
 
     await this.submit( this.loginForm.value )
+  }
+  goTo(route: string){
+    this.router.navigateByUrl(route);
   }
 }

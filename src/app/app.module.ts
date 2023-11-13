@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +39,9 @@ import { RegisterComponent } from './register/register.component';
     RouterModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule

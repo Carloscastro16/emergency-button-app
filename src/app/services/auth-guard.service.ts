@@ -17,7 +17,7 @@ export class AuthGuardService {
     return new Observable<boolean>((obs) => {
       this.auth.authState.subscribe((auth) => {
         if (!auth) {
-          this.router.navigate(['/inicio-sesion']);
+          this.router.navigate(['/login']);
           obs.next(false);
         }
         obs.next(true);

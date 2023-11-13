@@ -1,11 +1,13 @@
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { AlarmFormComponent } from './alarm-form/alarm-form.component';
+import { AlarmActiveComponent } from './alarm-active/alarm-active.component';
 
 
 @NgModule({
@@ -15,8 +17,14 @@ import { AppRoutingModule } from '../app-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  declarations: [Tab2Page]
+  declarations: [
+    Tab2Page,
+    AlarmFormComponent,
+    AlarmActiveComponent
+  ]
 })
 export class Tab2PageModule {}

@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { CardsComponent } from './cards/cards.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
 
 
 @NgModule({

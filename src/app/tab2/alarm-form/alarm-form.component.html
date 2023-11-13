@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="container">
+    <div class="top">
+    </div>
+    <div class="header">
+      <h1>Registrar contacto seguro</h1>
+    </div>
+    <form action="" [formGroup]="emergencyForm">
+      <ion-select formControlName="priority" label="Fixed label" label-placement="fixed" placeholder="Prioridad">
+        <ion-select-option value="alto">Urgente</ion-select-option>
+        <ion-select-option value="medio">Medio</ion-select-option>
+        <ion-select-option value="bajo">Bajo</ion-select-option>
+      </ion-select>
+      <ion-select formControlName="emergency" label="Fixed label" label-placement="fixed" placeholder="Tipo de emergencia">
+        <ion-select-option value="acoso">Acoso</ion-select-option>
+        <ion-select-option value="robo">Robo</ion-select-option>
+        <ion-select-option value="emergencia">Emergencia</ion-select-option>
+      </ion-select>
+      <ion-textarea
+        formControlName="description"
+        label="Custom Counter Format"
+        labelPlacement="floating"
+        [counter]="true"
+        maxlength="150"
+      ></ion-textarea>
+      <!-- <ion-list>
+        <ion-item>
+        </ion-item>
+        <ion-item>
+        </ion-item>
+        <ion-item>
+        </ion-item>
+      </ion-list> -->
+      <button (click)="onSubmit()">
+        Enviar
+      </button>
+    </form>
+  </div>
+</ion-content>

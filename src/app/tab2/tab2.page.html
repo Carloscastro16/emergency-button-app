@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="container">
+  <div class="container" *ngIf="!onSubmitForm">
     <div class="start">
       <div class="location">
         <h2>Tu ubicación actual</h2>
@@ -13,7 +13,7 @@
         <h1>¿Te encuentras en una emergencia?</h1>
         <p>Presiona el boton y la ayuda aparecerá</p>
       </div>
-      <button class="alarm-btn">
+      <button class="alarm-btn" (click)="setOpen(true)">
         <img src="../../assets/icon/alarm.png" alt="Alarm">
         <p>SOS</p>
       </button>
@@ -29,4 +29,58 @@
       </div>
     </div>
   </div>
+  <tab2-alarm-active *ngIf="onSubmitForm"></tab2-alarm-active>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Formulario</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)" >Cancelar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-content>
+          <div class="container">
+            <div class="top">
+            </div>
+            <div class="header">
+              <h1>Registra tu emergencia</h1>
+            </div>
+            <form action="" [formGroup]="emergencyForm">
+              <ion-select formControlName="priority" label="Prioridad" label-placement="fixed" placeholder="Prioridad">
+                <ion-select-option value="alto">Urgente</ion-select-option>
+                <ion-select-option value="medio">Medio</ion-select-option>
+                <ion-select-option value="bajo">Bajo</ion-select-option>
+              </ion-select>
+              <ion-select formControlName="emergency" label="Tipo de emergencia" label-placement="fixed" placeholder="Tipo de emergencia">
+                <ion-select-option value="acoso">Acoso</ion-select-option>
+                <ion-select-option value="robo">Robo</ion-select-option>
+                <ion-select-option value="emergencia">Emergencia</ion-select-option>
+              </ion-select>
+              <ion-textarea
+                formControlName="description"
+                label="Describe tu emergencia"
+                labelPlacement="floating"
+                [counter]="true"
+                maxlength="150"
+              ></ion-textarea>
+              <!-- <ion-list>
+                <ion-item>
+                </ion-item>
+                <ion-item>
+                </ion-item>
+                <ion-item>
+                </ion-item>
+              </ion-list> -->
+              <button (click)="onSubmit()">
+                Enviar
+              </button>
+            </form>
+          </div>
+        </ion-content>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

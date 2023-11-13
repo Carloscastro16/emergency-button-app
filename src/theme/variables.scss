@@ -10,7 +10,7 @@
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #3171e0;
   --ion-color-primary-tint: #4c8dff;
-
+  --ion-overlay-background-color: #fff;
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
   --ion-color-secondary-rgb: 61, 194, 255;
@@ -181,12 +181,12 @@
 
     --ion-item-background: #fff;
 
-    --ion-card-background: #1c1c1d;
+    --ion-card-background: #fff;
   }
 
   .ios ion-modal {
     --ion-background-color: #fff;
-    --ion-toolbar-background: var(--ion-color-step-150);
+    --ion-toolbar-background: #fff;
     --ion-toolbar-border-color: var(--ion-color-step-250);
   }
 
@@ -227,10 +227,10 @@
 
     --ion-item-background: #fff;
 
-    --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-background: #fff;
 
-    --ion-tab-bar-background: #1f1f1f;
+    --ion-tab-bar-background: #fff;
 
-    --ion-card-background: #1e1e1e;
+    --ion-card-background: #fff;
   }
 }

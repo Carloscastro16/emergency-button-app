@@ -15,13 +15,18 @@ import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TabsPage
+    TabsPage,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
     Tab1PageModule,
@@ -31,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -1,12 +1,13 @@
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { CardsComponent } from './cards/cards.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -15,12 +16,14 @@ import { CardsComponent } from './cards/cards.component';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     Tab1Page,
-    CardsComponent
+    CardsComponent,
+    ContactFormComponent
   ]
 })
 export class Tab1PageModule {}

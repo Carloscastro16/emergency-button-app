@@ -1,0 +1,28 @@
+form{
+    button{
+        background-color: var(--primary);
+        border-radius: 14px;
+        border: none;
+        padding: .7rem 1rem;
+        margin-top: 1rem;
+    }
+    ion-list{
+        display: flex;
+        gap: .6rem;
+        flex-direction: column;
+    }
+}
+.container{
+    .top{
+        margin-top: 1.3rem;
+        button{
+            width: fit-content;
+            background: transparent;
+            border: none;
+            ion-icon{
+                font-size: 2rem;
+                color: #000;
+            }
+        }
+    }
+}

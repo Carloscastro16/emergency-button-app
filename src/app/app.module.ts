@@ -14,7 +14,7 @@ import { TabsPage } from './tabs/tabs.page';
 import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +31,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     RouterModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
+    HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
